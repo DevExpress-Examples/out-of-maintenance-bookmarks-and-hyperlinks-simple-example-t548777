@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Form1.cs](./CS/BookmarksAndHyperlinksSimpleExample/Form1.cs) (VB: [Form1.vb](./VB/BookmarksAndHyperlinksSimpleExample/Form1.vb))
+* [Program.cs](./CS/BookmarksAndHyperlinksSimpleExample/Program.cs) (VB: [Program.vb](./VB/BookmarksAndHyperlinksSimpleExample/Program.vb))
+<!-- default file list end -->
 # Bookmarks and Hyperlinks Simple Example
 
 
