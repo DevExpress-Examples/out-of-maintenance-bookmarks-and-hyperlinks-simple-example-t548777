@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraRichEdit.API.Native;
 using DevExpress.XtraRichEdit;
+using DevExpress.Portable.Input;
 
 namespace BookmarksAndHyperlinksSimpleExample
 {
@@ -32,7 +33,7 @@ namespace BookmarksAndHyperlinksSimpleExample
             hyperlinkOptions = richEditControl1.Options.Hyperlinks;
 
             hyperlinkOptions.EnableUriCorrection = false;
-            hyperlinkOptions.ModifierKeys = Keys.Shift;
+            hyperlinkOptions.ModifierKeys = PortableKeys.Shift;
             hyperlinkOptions.ShowToolTip = true;
             #endregion #Hyperlinkoptions
 
@@ -134,11 +135,11 @@ namespace BookmarksAndHyperlinksSimpleExample
             {
                 checkEdit6.CheckState = CheckState.Unchecked;
                 checkEdit7.CheckState = CheckState.Unchecked;
-                hyperlinkOptions.ModifierKeys = Keys.Control;
+                hyperlinkOptions.ModifierKeys = PortableKeys.Control;
 
             }
             else
-                hyperlinkOptions.ModifierKeys = Keys.None;
+                hyperlinkOptions.ModifierKeys = PortableKeys.None;
         }
 
         private void checkEdit6_CheckedChanged(object sender, EventArgs e)
@@ -147,11 +148,11 @@ namespace BookmarksAndHyperlinksSimpleExample
             {
                 checkEdit3.CheckState = CheckState.Unchecked;
                 checkEdit7.CheckState = CheckState.Unchecked;
-                hyperlinkOptions.ModifierKeys = Keys.Alt;
+                hyperlinkOptions.ModifierKeys = PortableKeys.Alt;
 
             }
             else
-                hyperlinkOptions.ModifierKeys = Keys.None;
+                hyperlinkOptions.ModifierKeys = PortableKeys.None;
 
         }
 
@@ -162,11 +163,11 @@ namespace BookmarksAndHyperlinksSimpleExample
                 checkEdit6.CheckState = CheckState.Unchecked;
                 checkEdit3.CheckState = CheckState.Unchecked;
 
-                hyperlinkOptions.ModifierKeys = Keys.Shift;
+                hyperlinkOptions.ModifierKeys = PortableKeys.Shift;
 
             }
             else
-                hyperlinkOptions.ModifierKeys = Keys.None;
+                hyperlinkOptions.ModifierKeys = PortableKeys.None;
 
         }
         #endregion #Events

@@ -10,6 +10,7 @@ Imports System.Threading.Tasks
 Imports System.Windows.Forms
 Imports DevExpress.XtraRichEdit.API.Native
 Imports DevExpress.XtraRichEdit
+Imports DevExpress.Portable.Input
 
 Namespace BookmarksAndHyperlinksSimpleExample
     Partial Public Class Form1
@@ -26,23 +27,23 @@ Namespace BookmarksAndHyperlinksSimpleExample
             InsertHyperlink()
             InsertBookmark()
 
-'            #Region "#HyperlinkOptions"
+            '            #Region "#HyperlinkOptions"
             hyperlinkOptions = richEditControl1.Options.Hyperlinks
 
             hyperlinkOptions.EnableUriCorrection = False
-            hyperlinkOptions.ModifierKeys = Keys.Shift
+            hyperlinkOptions.ModifierKeys = PortableKeys.Shift
             hyperlinkOptions.ShowToolTip = True
-'            #End Region ' #Hyperlinkoptions
+            '            #End Region ' #Hyperlinkoptions
 
-'            #Region "#BookmarkOptions"
+            '            #Region "#BookmarkOptions"
             bookmarkOptions = richEditControl1.Options.Bookmarks
             bookmarkOptions.ConflictNameResolution = ConflictNameAction.Rename
             bookmarkOptions.Visibility = RichEditBookmarkVisibility.Hidden
-'            #End Region ' #BookmarkOptions
+            '            #End Region ' #BookmarkOptions
         End Sub
 
         Private Sub InsertBookmark()
-'            #Region "#InsertBookmark"
+            '            #Region "#InsertBookmark"
             Dim document As Document = richEditControl1.Document
             document.BeginUpdate()
             Dim pos As DocumentPosition = document.Range.Start
@@ -57,11 +58,11 @@ Namespace BookmarksAndHyperlinksSimpleExample
                 document.Hyperlinks(1).Anchor = "Top"
             End If
             document.EndUpdate()
-'            #End Region ' #InsertBookmark
+            '            #End Region ' #InsertBookmark
         End Sub
 
         Private Sub InsertHyperlink()
-'            #Region "#InsertHyperlink"
+            '            #Region "#InsertHyperlink"
             Dim document As Document = richEditControl1.Document
 
             'Find the specific text string in a document
@@ -74,10 +75,10 @@ Namespace BookmarksAndHyperlinksSimpleExample
                 document.Hyperlinks(0).NavigateUri = "https://www.devexpress.com/Products/NET/Controls/WinForms/Rich_Editor/"
                 document.Hyperlinks(0).ToolTip = "WinForms Rich Text Editor"
             End If
-'            #End Region ' #InsertHyperlink
+            '            #End Region ' #InsertHyperlink
         End Sub
 
-        #Region "#Events"
+#Region "#Events"
         Private Sub checkEdit1_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles checkEdit1.CheckedChanged
             If checkEdit1.Checked = False Then
                 hyperlinkOptions.ShowToolTip = False
@@ -112,10 +113,10 @@ Namespace BookmarksAndHyperlinksSimpleExample
             If checkEdit3.CheckState = CheckState.Checked Then
                 checkEdit6.CheckState = CheckState.Unchecked
                 checkEdit7.CheckState = CheckState.Unchecked
-                hyperlinkOptions.ModifierKeys = Keys.Control
+                hyperlinkOptions.ModifierKeys = PortableKeys.Control
 
             Else
-                hyperlinkOptions.ModifierKeys = Keys.None
+                hyperlinkOptions.ModifierKeys = PortableKeys.None
             End If
         End Sub
 
@@ -123,10 +124,10 @@ Namespace BookmarksAndHyperlinksSimpleExample
             If checkEdit6.CheckState = CheckState.Checked Then
                 checkEdit3.CheckState = CheckState.Unchecked
                 checkEdit7.CheckState = CheckState.Unchecked
-                hyperlinkOptions.ModifierKeys = Keys.Alt
+                hyperlinkOptions.ModifierKeys = PortableKeys.Alt
 
             Else
-                hyperlinkOptions.ModifierKeys = Keys.None
+                hyperlinkOptions.ModifierKeys = PortableKeys.None
             End If
 
         End Sub
@@ -136,13 +137,13 @@ Namespace BookmarksAndHyperlinksSimpleExample
                 checkEdit6.CheckState = CheckState.Unchecked
                 checkEdit3.CheckState = CheckState.Unchecked
 
-                hyperlinkOptions.ModifierKeys = Keys.Shift
+                hyperlinkOptions.ModifierKeys = PortableKeys.Shift
 
             Else
-                hyperlinkOptions.ModifierKeys = Keys.None
+                hyperlinkOptions.ModifierKeys = PortableKeys.None
             End If
 
         End Sub
-        #End Region ' #Events
+#End Region ' #Events
     End Class
 End Namespace
